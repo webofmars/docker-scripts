@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker ps -a | awk '{ print $1}' | tail -n+2 | xargs docker stop
-docker ps -a | awk '{ print $1}' | tail -n+2 | xargs docker rm
-docker images | awk '{ print $3 }' | tail -n+2 | xargs docker rmi
+docker ps -a | awk '{ print $1}' | tail -n+2 | xargs -r docker stop
+docker ps -a | awk '{ print $1}' | tail -n+2 | xargs -r docker rm
+docker images | awk '{ print $3 }' | tail -n+2 | xargs -r docker rmi
